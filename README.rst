@@ -1,5 +1,10 @@
-# django-greenfield
+=================
+Django Greenfield
+
+=================
+
 Django Test project with support for LDAP, pytest, Postgresql, ...
+
 
 Prerequisites
 -------------
