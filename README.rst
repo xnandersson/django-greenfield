@@ -10,12 +10,17 @@ Prerequisites
   $ sudo usermod -a -G docker nandersson
   $ docker pull ubuntu:latest
   
-  
+
+Install
+-------
+
 .. code:: bash
 
   $ python3 -m venv ~/venv3/django-greenfield
   $ source ~/venv3/django-greenfield/bin/activate
   $ pip install -U pip
   $ pip install -r requirements.txt
+  $ src/manage.py migrate
+  $ src/manage.py runserver
   $ echo TLS_REQCERT ALLOW >> ~/.ldaprc
   $ pytest
