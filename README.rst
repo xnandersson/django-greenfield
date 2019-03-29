@@ -10,7 +10,7 @@ Prerequisites
 
 .. code:: bash
 
-  $ sudo apt-get install python3-venv devscripts python3-dev libldap2-dev libsasl2-dev ldap-utils docker.io
+  $ sudo apt-get install python3-venv devscripts python3-dev libldap2-dev libsasl2-dev ldap-utils docker.io -y
   $ sudo usermod -a -G docker nandersson
   $ docker pull ubuntu:latest
   
