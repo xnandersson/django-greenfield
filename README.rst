@@ -5,16 +5,25 @@ Django Greenfield
 Django Test project with support for LDAP, pytest, Postgresql, ...
 
 
-Prerequisites
--------------
+Software Prerequisites
+----------------------
 
 .. code:: bash
 
-  $ sudo apt-get install python3-venv devscripts python3-dev libldap2-dev libsasl2-dev ldap-utils docker.io -y
+  $ sudo apt-get install python3-venv devscripts python3-dev libldap2-dev libsasl2-dev ldap-utils docker.io postgresql-client-common -y
   $ sudo usermod -a -G docker nandersson
   $ docker pull ubuntu:latest
   
+Pre-install
+-----------
 
+.. code:: bash
+
+  $ sudo docker pull postgres
+  $ mkdir -p ${HOME}/docker/volumes/postgres
+  $ sudo docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v ${HOME}/docker/volumes/postgres:/var/lib/postgresql/data postgres
+  $ psql -h localhost -U postgres -d postgres
+  
 Install
 -------
 
