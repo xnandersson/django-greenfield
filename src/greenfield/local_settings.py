@@ -20,3 +20,14 @@ AUTH_LDAP_USER_FLAGS_BY_GROUP = {
 }
 AUTH_LDAP_GROUP_SEARCH = LDAPSearch("cn=Users,dc=openforce,dc=org", ldap.SCOPE_SUBTREE, "(objectClass=group)")
 AUTH_LDAP_GROUP_TYPE=ActiveDirectoryGroupType()
+
+DATABASES = {
+    'default': {
+        'ENGINE': 'django.db.backends.postgresql',
+        'NAME': 'greenfield',
+        'USER': 'greenfield',
+        'PASSWORD': 'Secret012',
+        'HOST': '127.0.0.1',
+        'PORT': 5432,
+    }
+}
