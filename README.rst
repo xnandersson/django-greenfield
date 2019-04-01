@@ -10,7 +10,7 @@ Software Prerequisites
 
 .. code:: bash
 
-  $ sudo apt-get install python3-venv devscripts python3-dev libldap2-dev libsasl2-dev ldap-utils docker.io postgresql-client-common -y
+  $ sudo apt-get install python3-venv devscripts python3-dev libldap2-dev libsasl2-dev ldap-utils docker.io postgresql-client-common postgresql-client-10 -y
   $ sudo usermod -a -G docker nandersson
   $ docker pull ubuntu:latest
   
