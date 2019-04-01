@@ -23,6 +23,11 @@ Pre-install
   $ mkdir -p ${HOME}/docker/volumes/postgres
   $ sudo docker run --rm --name pg-docker -e POSTGRES_PASSWORD=docker -d -p 5432:5432 -v ${HOME}/docker/volumes/postgres:/var/lib/postgresql/data postgres
   $ psql -h localhost -U postgres -d postgres
+  postgres=# create role greenfield with password 'Secret012' login;
+  postgres=# create database greenfield;
+  postgres=# grant all on database greenfield to greenfield;
+  postgres=# \q
+  $ PGPASSWORD="Secret012" psql -h 127.0.0.1 greenfield greenfield
   
 Install
 -------
