@@ -5,7 +5,7 @@ logger = logging.getLogger('django_auth_ldap')
 logger.addHandler(logging.StreamHandler())
 logger.setLevel(logging.DEBUG)
 
-AUTH_LDAP_SERVER_URI="ldaps://127.0.0.1"
+AUTH_LDAP_SERVER_URI="ldaps://dc"
 #AUTH_LDAP_BIND_DN = "cn=Administrator,cn=Users,dc=openforce,dc=org"
 AUTH_LDAP_BIND_DN = "Administrator@OPENFORCE.ORG"
 AUTH_LDAP_BIND_PASSWORD = "Abc123!"
@@ -26,8 +26,8 @@ DATABASES = {
         'ENGINE': 'django.db.backends.postgresql',
         'NAME': 'greenfield',
         'USER': 'greenfield',
-        'PASSWORD': 'Secret012',
-        'HOST': '127.0.0.1',
+        'PASSWORD': 'greenfield',
+        'HOST': 'postgres',
         'PORT': 5432,
     }
 }
