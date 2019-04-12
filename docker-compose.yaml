@@ -25,6 +25,8 @@ services:
     ports:
      - 5432:5432
   dc:
+    build:
+      context: https://github.com/xnandersson/docker-dc
     image: xnandersson/dc:latest
     privileged: true
     environment:
