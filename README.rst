@@ -18,3 +18,4 @@ Install
   $ docker-compose exec dc samba-tool group addmembers Superusers nandersson 
   $ docker-compose exec python python manage.py makemigrations widget
   $ docker-compose exec python python manage.py migrate
+  $ docker-compose run -e DJANGO_SETTINGS_MODULE=greenfield.settings.testing --no-deps --rm python py.test
