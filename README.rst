@@ -19,3 +19,10 @@ Install
   $ docker-compose exec python python manage.py makemigrations widget
   $ docker-compose exec python python manage.py migrate
   $ docker-compose run -e DJANGO_SETTINGS_MODULE=greenfield.settings.testing --no-deps --rm python py.test
+
+Test
+----
+
+.. code:: bash
+
+  $ http POST http://localhost:8000/api/v1/widgets/ "Authorization: Token 29100fb235300217e2f8d8d13ede0e82aa4e5875" display_name="Some cool Widget"
