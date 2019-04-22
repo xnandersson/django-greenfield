@@ -26,7 +26,7 @@ services:
      - 5432:5432
   dc:
     build:
-      context: https://github.com/xnandersson/docker-dc
+      context: https://github.com/xnandersson/docker-dc.git
     image: xnandersson/dc:latest
     privileged: true
     environment:
