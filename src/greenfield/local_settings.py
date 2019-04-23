@@ -1,5 +1,8 @@
 import ldap, logging
+import os
 from django_auth_ldap.config import LDAPSearch, ActiveDirectoryGroupType
+
+BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 
 logger = logging.getLogger('django_auth_ldap')
 logger.addHandler(logging.StreamHandler())
@@ -31,3 +34,5 @@ DATABASES = {
         'PORT': 5432,
     }
 }
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')

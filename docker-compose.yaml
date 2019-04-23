@@ -1,6 +1,8 @@
 version: '3'
 volumes:
   pgdata:
+  static_volume:
+
 services:
   python:
     build:
@@ -9,11 +11,13 @@ services:
     image: xnandersson/django-greenfield
     volumes:
      - ./src:/src
+     - static_volume:/src/staticfiles
     ports:
      - 8000:8000
     links:
      - postgres
      - dc
+    command: ["gunicorn", "--bind=0.0.0.0", "greenfield.wsgi:application"]
   postgres:
     image: postgres:latest
     environment:
@@ -34,4 +38,14 @@ services:
       SAMBA_HOST_NAME: dc
       SAMBA_ADMINPASS: Abc123!
       SAMBA_REALM: OPENFORCE.ORG
-
+  nginx:
+    build:
+      context: .
+      dockerfile: docker/nginx/Dockerfile
+    image: xnandersson/django-greenfield-nginx
+    ports:
+     - 80:80
+    links:
+     - python
+    volumes:
+     - static_volume:/src/staticfiles
